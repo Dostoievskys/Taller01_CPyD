@@ -67,3 +67,32 @@ void imprimirvector(std::vector<venta> V){
     std::cout << "Descripcion: " << V[i].name << std::endl; 
   }
 }
+
+/*
+Funcion para agregar datos
+
+vector<datos> FuncionOrdenar(vector<vector<venta>V{
+  std::string aux;
+  int cont=0;
+  datos D;
+  std::vector<datos> X;
+  int fecha;
+  for(int i=0;i<V.size();i++){
+    aux=V[i].fecha;
+    if(aux==V[i+1].fecha)
+      cont++;
+    else
+        {
+          cont++;
+          D.cantVentas=cont;
+          fecha=cambioFecha(aux);//string a int eliminando "-"
+          D.fecha=fecha;
+          X.push_back(D);
+          cont=0;
+          aux=v[i+1.fecha];
+        }
+  return X;
+
+  }
+
+*/
