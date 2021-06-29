@@ -18,4 +18,5 @@ void Participantes();
 std::vector<std::string> obtenerlinea(std::string);
 venta guardarVenta(std::vector<std::string>);
 void imprimirvector(std::vector<venta>);
+int cambioFecha( std::string str);
 # endif

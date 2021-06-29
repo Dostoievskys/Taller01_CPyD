@@ -4,6 +4,7 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
+#include<algorithm>
 #include "Funciones.h"
 
 /**
@@ -93,6 +94,11 @@ vector<datos> FuncionOrdenar(vector<vector<venta>V{
         }
   return X;
 
-  }
+  }*/
 
-*/
+int cambioFecha( std::string str) {//funcion para remover el caracter '-'
+   str.erase(remove(str.begin(), str.end(), '-'), str.end()); //Se remueve el caracter '-'
+  int fechaI;
+  fechaI=stoi(str);
+  return fechaI;
+}
