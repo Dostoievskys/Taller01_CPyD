@@ -9,6 +9,11 @@ struct venta{
     std::string name;//indica el nombre del producto y sirve de descripción
 };
 
+struct datos{
+    int fecha;//Fecha de compra 20201014  de tipo entero
+    int cantVentas;//cantidad de ventas en ese dia
+};
+
 void Participantes();
 std::vector<std::string> obtenerlinea(std::string);
 venta guardarVenta(std::vector<std::string>);
