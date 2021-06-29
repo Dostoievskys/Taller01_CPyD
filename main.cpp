@@ -5,12 +5,19 @@
 #include <vector> //libreria para vector
 #include "Funciones.h"
 
+/*
+Compilacion: 
+./ruta/bin/programa datosPrueba.csv
+./ruta/bin/programa datos.csv
+*/
+
 int main(int argc, char** argv) {
     if (argc > 1) {
         std::vector<venta> V; //Vector que almacena las ventas
         std::string Archivo(argv[1]); //Archivo que hay que leer 
         std::ifstream lectura(Archivo); //Lectura
         std::vector<std::string> datos;
+        std::vector<FechaV> FechaVentas; 
         venta dato;
 
         if(lectura){
@@ -23,7 +30,9 @@ int main(int argc, char** argv) {
                 }
             }
         }
-        imprimirvector(V);
+        FechaVentas = FuncionOrdenar(V); 
+        //imprimirvector(V);
+        //imprimirvectorF(FechaVentas);
     } 
     else {
         // Mostrar los integrantes

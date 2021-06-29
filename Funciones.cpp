@@ -18,8 +18,8 @@ void Participantes(){
 }
 
 /*
-Funcion para ordenar una linea del archivo
-@param linea del archivo
+*Funcion para ordenar una linea del archivo
+*@param linea del archivo
 */
 std::vector<std::string> obtenerlinea(std::string fila){ 
     std::vector<std::string> arreglo;                           
@@ -34,9 +34,9 @@ std::vector<std::string> obtenerlinea(std::string fila){
 }
 
 /*
-Funcion para guardar datos de la venta dentro de la struct venta
-@param Vector con datos del estudiante
-@return venta llenado
+*Funcion para guardar datos de la venta dentro de la struct venta
+*@param Vector con datos del estudiante
+*@return venta llenado
 */
 venta guardarVenta(std::vector<std::string> datos){
   venta V; //struct para retornar
@@ -55,12 +55,13 @@ venta guardarVenta(std::vector<std::string> datos){
   return V;
 }
 /*
-Funcion para imprimir el vector por consola
-@param Vector a imprimir
+*Funcion para imprimir el vector tipo venta por consola
+*@param Vector a imprimir
 */
 void imprimirvector(std::vector<venta> V){
   for(std::size_t i = 0; i < V.size(); i++){
-    std::cout <<std::endl<< std::endl;
+    std::cout <<std::endl;
+    //std::cout << "i: " << i << std::endl;
     std::cout << "Fecha: " << V[i].created << std::endl; 
     std::cout << "Id: " << V[i].sku << std::endl;
     std::cout << "Cantidad: " << V[i].quantity<< std::endl;
@@ -70,35 +71,70 @@ void imprimirvector(std::vector<venta> V){
 }
 
 /*
-Funcion para agregar datos
+*Funcion para imprimir el vector tipo FechaV por consola
+*@param Vector a imprimir
+*/
+void imprimirvectorF(std::vector<FechaV> F){
+  for(std::size_t i = 0; i < F.size(); i++){
+    std::cout <<std::endl;
+    //std::cout << "i: " << i << std::endl;
+    std::cout << "Fecha: " << F[i].fecha<< std::endl; 
+    std::cout << "Cantidad: " << F[i].cantVentas << std::endl; 
+  }
+}
 
-vector<datos> FuncionOrdenar(vector<vector<venta>V{
-  std::string aux;
-  int cont=0;
-  datos D;
-  std::vector<datos> X;
-  int fecha;
-  for(int i=0;i<V.size();i++){
-    aux=V[i].fecha;
-    if(aux==V[i+1].fecha)
-      cont++;
-    else
-        {
-          cont++;
-          D.cantVentas=cont;
-          fecha=cambioFecha(aux);//string a int eliminando "-"
-          D.fecha=fecha;
-          X.push_back(D);
-          cont=0;
-          aux=v[i+1.fecha];
-        }
-  return X;
-
-  }*/
-
-int cambioFecha( std::string str) {//funcion para remover el caracter '-'
-   str.erase(remove(str.begin(), str.end(), '-'), str.end()); //Se remueve el caracter '-'
+/**
+ *Funcion para remover el caracter '-' de la fecha
+ *@params string fecha
+ *@return fecha como un int 
+*/
+int cambioFecha(std::string str){
   int fechaI;
+  str.erase(remove(str.begin(), str.end(), '-'), str.end());
   fechaI=stoi(str);
   return fechaI;
+}
+
+/*
+*Funcion para agregar datos
+*@param Vector tipo venta
+*@return vector tipo Fechav 
+*/
+std::vector<FechaV> FuncionOrdenar(std::vector<venta>V){
+  std::string aux;
+  int cont=0;
+  FechaV D;
+  std::vector<FechaV> X;
+  int fecha;
+  for(std::size_t i=0; i<V.size()-1;i++){
+    aux=V[i].created;
+    if(aux==V[i+1].created){
+      cont++;
+      if(i+1 == V.size()-1){
+        cont++;
+        aux=V[i+1].created;
+        fecha=cambioFecha(aux);//string a int eliminando "-"
+        D.fecha=fecha;
+        D.cantVentas=cont;
+        X.push_back(D);
+      }
+    }
+    else{
+      cont++;
+      D.cantVentas=cont;
+      fecha=cambioFecha(aux);//string a int eliminando "-"
+      D.fecha=fecha;
+      X.push_back(D);
+      cont=0;
+      aux=V[i+1].created;
+      if(i+1 == V.size()-1){
+        aux=V[i+1].created;
+        fecha=cambioFecha(aux);//string a int eliminando "-"
+        D.fecha=fecha;
+        D.cantVentas=1;
+        X.push_back(D);
+      }
+    }
+  }
+  return X;
 }

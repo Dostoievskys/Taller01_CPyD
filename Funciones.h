@@ -9,7 +9,7 @@ struct venta{
     std::string name;//indica el nombre del producto y sirve de descripción
 };
 
-struct datos{
+struct FechaV{
     int fecha;//Fecha de compra 20201014  de tipo entero
     int cantVentas;//cantidad de ventas en ese dia
 };
@@ -18,5 +18,7 @@ void Participantes();
 std::vector<std::string> obtenerlinea(std::string);
 venta guardarVenta(std::vector<std::string>);
 void imprimirvector(std::vector<venta>);
-int cambioFecha( std::string str);
+void imprimirvectorF(std::vector<FechaV>);
+int cambioFecha( std::string);
+std::vector<FechaV> FuncionOrdenar(std::vector<venta>);
 # endif
