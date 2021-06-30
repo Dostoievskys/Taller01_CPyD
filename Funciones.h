@@ -10,6 +10,7 @@ struct venta{
 };
 
 struct FechaV{
+    int id;
     int fecha;//Fecha de compra 20201014  de tipo entero
     int cantVentas;//cantidad de ventas en ese dia
 };
@@ -20,5 +21,8 @@ venta guardarVenta(std::vector<std::string>);
 void imprimirvector(std::vector<venta>);
 void imprimirvectorF(std::vector<FechaV>);
 int cambioFecha( std::string);
+void CalculoPendiente(std::vector<venta>, std::vector<FechaV>);
 std::vector<FechaV> FuncionOrdenar(std::vector<venta>);
+void CalculoIntercepto(std::vector<FechaV>, double);
+void Formula(double, double);
 # endif

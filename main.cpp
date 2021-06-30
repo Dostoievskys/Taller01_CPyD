@@ -30,9 +30,13 @@ int main(int argc, char** argv) {
                 }
             }
         }
-        FechaVentas = FuncionOrdenar(V); 
-        //imprimirvector(V);
+        FechaVentas = FuncionOrdenar(V);
         //imprimirvectorF(FechaVentas);
+        //imprimirvector(V);
+        Participantes();
+        CalculoPendiente(V,FechaVentas);
+        
+        
     } 
     else {
         // Mostrar los integrantes
