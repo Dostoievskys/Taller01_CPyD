@@ -201,6 +201,5 @@ void CalculoIntercepto(std::vector<FechaV> F, double P){
 */
 void Formula(double P, double I){
   std::cout <<std::endl;
-  std::cout << "Venta = Fecha * " << P << " + " << I << std::endl; //Id del dia
-  std::cout << std::endl << "Considere fecha como un numero entero, donde el valor 1 es 2020-10-14 \n" << std::endl; 
+  std::cout << "Venta = Periodo * " << P << " + " << I << std::endl; //Id del dia 
 }

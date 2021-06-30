@@ -21,8 +21,8 @@ venta guardarVenta(std::vector<std::string>);
 void imprimirvector(std::vector<venta>);
 void imprimirvectorF(std::vector<FechaV>);
 int cambioFecha( std::string);
-void CalculoPendiente(std::vector<venta>, std::vector<FechaV>);
 std::vector<FechaV> FuncionOrdenar(std::vector<venta>);
+void CalculoPendiente(std::vector<venta>, std::vector<FechaV>);
 void CalculoIntercepto(std::vector<FechaV>, double);
 void Formula(double, double);
 # endif
