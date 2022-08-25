@@ -1,6 +1,6 @@
 # Taller01_CPyD
 
-Programa en C++ 
+Programa en C++ para el ramo de Computacion paralela y distribuida, que lee un archivo .csv con registro de ventas. 
 
 ## Ejecucion por terminal 
 
